@@ -10,6 +10,12 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 
+// Bathroom components
+import BathroomIndex from './components/BathroomIndex/BathroomIndex'
+import BathroomCreate from './components/BathroomCreate/BathroomCreate'
+import BathroomShow from './components/BathroomShow/BathroomShow'
+import BathroomUpdate from './components/BathroomUpdate/BathroomUpdate'
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -64,6 +70,26 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          {/* Show all bathrooms */}
+          <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
+            <BathroomIndex msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          {/* Create a bathroom */}
+          <AuthenticatedRoute user={user} path='/create-bathroom' render={() => (
+            <BathroomCreate msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          {/* Get a single bathroom | show */}
+          <AuthenticatedRoute user={user} exact path='/bathrooms/:id' render={() => (
+            <BathroomShow msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          {/* Update a single movie */}
+          <AuthenticatedRoute user={user} path='/bathrooms/:id/edit/' render={() => (
+            <BathroomUpdate msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
