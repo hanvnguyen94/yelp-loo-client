@@ -1,6 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Component } from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
+import Geocode from 'react-geocode'
+
+const GoogleMapKey = 'AIzaSyAXQgIkuRMVnmvJsAGvpjmLio18eXm1ERc'
+
+Geocode.setApiKey(GoogleMapKey)
+
+Geocode.setLocationType('ROOFTOP')
 
 export const MapContainer = () => {
   const [ currentPosition, setCurrentPosition ] = useState({})
@@ -32,7 +39,7 @@ export const MapContainer = () => {
 
   return (
     <LoadScript
-      googleMapsApiKey='AIzaSyAXQgIkuRMVnmvJsAGvpjmLio18eXm1ERc'>
+      googleMapsApiKey={GoogleMapKey}>
       <GoogleMap
         mapContainerStyle={mapStyles}
         zoom={13}
@@ -50,4 +57,50 @@ export const MapContainer = () => {
   )
 }
 
-export default withRouter(MapContainer)
+const mapStyles = {
+  height: '60vh',
+  width: '100%',
+  marginBottom: '2%'
+}
+
+export default class SecondMapContainer extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      location: null
+    }
+  }
+  componendDidMount () {
+    let lat
+    let lng
+    Geocode.fromAddress(location).then(
+      (response) => {
+        lat = response.results[0].geometry.location.lat
+        lng = response.results[0].geometry.location.lng
+        console.log(lat, lng)
+        this.setState({ location: location })
+      },
+      (error) => {
+        console.error(error)
+      }
+    )
+  }
+  // const defaultCenter = {
+  //   lat: lat, lng: lng
+  // }
+  render () {
+    return (
+      <LoadScript
+        googleMapsApiKey={GoogleMapKey}>
+        <GoogleMap
+          mapContainerStyle={mapStyles}
+          zoom={13}
+          center={{ location }}
+        />
+      </LoadScript>
+    )
+  }
+}
+
+// export default GoogleMap
