@@ -25,21 +25,20 @@ class BathroomCreate extends Component {
     // create a bathroom, pass it the bathroom data and the user for its token
     bathroomCreate(bathroom, user)
       // set the createdId to the id of the bathroom we just created
-      // .then(res => this.setState({ createdId: res.data.bathroom._id }))
       .then(res => {
         this.setState({ createdId: res.data.bathroom.id })
         // pass the response to the next .then so we can show the title
         return res
       })
       .then(res => msgAlert({
-        heading: 'Created Bathroom Successfully',
-        message: `Bathroom has been created successfully. Now viewing ${res.data.bathroom.name}.`,
+        heading: 'Created Loo Successfully',
+        message: `Loo has been created successfully. Now viewing ${res.data.bathroom.name}.`,
         variant: 'success'
       }))
       .catch(error => {
         msgAlert({
-          heading: 'Failed to Create Bathroom',
-          message: 'Could not create Bathroom with error: ' + error.message,
+          heading: 'Failed to Create Loo',
+          message: 'Could not create Loo with error: ' + error.message,
           variant: 'danger'
         })
       })

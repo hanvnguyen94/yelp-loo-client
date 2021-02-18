@@ -19,14 +19,14 @@ class BathroomIndex extends Component {
     bathroomIndex(user)
       .then(res => this.setState({ bathrooms: res.data.bathrooms }))
       .then(() => msgAlert({
-        heading: 'Loaded Bathrooms Successfully',
-        message: 'All Bathrooms retrieved. Click on one to go to its page.',
+        heading: 'Loaded Loos Successfully',
+        message: 'All Loos retrieved. Click on one to go to its page.',
         variant: 'success'
       }))
       .catch(error => {
         msgAlert({
-          heading: 'Failed to Load Bathrooms!',
-          message: 'Could not load Bathrooms with error: ' + error.message,
+          heading: 'Failed to Load Loos!',
+          message: 'Could not load Loos with error: ' + error.message,
           variant: 'danger'
         })
       })
@@ -40,6 +40,7 @@ class BathroomIndex extends Component {
         </Spinner>
       )
     }
+
     const bathroomsJsx = bathrooms.map(bathroom => (
       <Link to={`/bathrooms/${bathroom.id}`} key={bathroom.id}>
         <div className='card mb-3'>

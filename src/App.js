@@ -15,6 +15,7 @@ import BathroomIndex from './components/BathroomIndex/BathroomIndex'
 import BathroomCreate from './components/BathroomCreate/BathroomCreate'
 import BathroomShow from './components/BathroomShow/BathroomShow'
 import BathroomUpdate from './components/BathroomUpdate/BathroomUpdate'
+import GoogleMap from './components/GoogleMap/GoogleMap'
 // import Footer from './components/Footer/Footer'
 
 // import Button from 'react-bootstrap/Button'
@@ -79,7 +80,11 @@ class App extends Component {
             {/* Show all bathrooms */}
 
             <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
-              <BathroomIndex msgAlert={this.msgAlert} user={user} />
+              <Fragment>
+                <GoogleMap />
+                <BathroomIndex msgAlert={this.msgAlert} user={user} />
+              </Fragment>
+
             )} />
 
             {/* Create a bathroom */}

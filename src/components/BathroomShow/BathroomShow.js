@@ -24,14 +24,14 @@ class BathroomShow extends Component {
       // set the bathroom state, to the bathroom we got back in the response's data
       .then(res => this.setState({ bathroom: res.data.bathroom }))
       .then(() => msgAlert({
-        heading: 'Showing Bathroom Successfully',
-        message: 'The bathroom is now displayed.',
+        heading: 'Showing Loo Successfully',
+        message: 'The Loo is now displayed.',
         variant: 'success'
       }))
       .catch(error => {
         msgAlert({
-          heading: 'Showing Bathroom Failed',
-          message: 'Failed to show bathroom with error: ' + error.message,
+          heading: 'Showing Loo Failed',
+          message: 'Failed to show Loo with error: ' + error.message,
           variant: 'danger'
         })
       })
