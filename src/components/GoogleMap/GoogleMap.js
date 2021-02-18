@@ -32,7 +32,7 @@ export const MapContainer = () => {
 
   const mapStyles = {
     textAlign: 'center',
-    height: '50vh',
+    height: '60vh',
     width: '100%',
     marginBottom: '2%'
   }

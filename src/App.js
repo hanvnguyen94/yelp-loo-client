@@ -15,7 +15,7 @@ import BathroomIndex from './components/BathroomIndex/BathroomIndex'
 import BathroomCreate from './components/BathroomCreate/BathroomCreate'
 import BathroomShow from './components/BathroomShow/BathroomShow'
 import BathroomUpdate from './components/BathroomUpdate/BathroomUpdate'
-import GoogleMap from './components/GoogleMap/GoogleMap'
+import { MapContainer } from './components/GoogleMap/GoogleMap'
 // import Footer from './components/Footer/Footer'
 
 // import Button from 'react-bootstrap/Button'
@@ -81,7 +81,7 @@ class App extends Component {
 
             <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
               <Fragment>
-                <GoogleMap />
+                <MapContainer />
                 <BathroomIndex msgAlert={this.msgAlert} user={user} />
               </Fragment>
 
