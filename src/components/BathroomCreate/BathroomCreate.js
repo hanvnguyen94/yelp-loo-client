@@ -27,7 +27,7 @@ class BathroomCreate extends Component {
       // set the createdId to the id of the bathroom we just created
       // .then(res => this.setState({ createdId: res.data.bathroom._id }))
       .then(res => {
-        this.setState({ createdId: res.data.bathroom._id })
+        this.setState({ createdId: res.data.bathroom.id })
         // pass the response to the next .then so we can show the title
         return res
       })
@@ -69,7 +69,7 @@ class BathroomCreate extends Component {
     }
     return (
       <div>
-        <h3>Create Bathroom</h3>
+        <h1 className='text-center'>Add New Loo</h1>
         <BathroomForm
           bathroom={bathroom}
           handleChange={this.handleChange}

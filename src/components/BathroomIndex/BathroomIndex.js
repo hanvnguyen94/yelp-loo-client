@@ -42,16 +42,25 @@ class BathroomIndex extends Component {
     }
     const bathroomsJsx = bathrooms.map(bathroom => (
       <Link to={`/bathrooms/${bathroom.id}`} key={bathroom.id}>
-        <div style={{ paddingLeft: '2%' }}>
-          <li>
-            {bathroom.location}
-          </li>
+        <div className='card mb-3'>
+          <div className='row'>
+            <div className='col-md-4'>
+              <img className='img-fluid' src={bathroom.photoUrl}></img>
+            </div>
+            <div className='col-md-8'>
+              <div className='card-body'>
+                <h5 className='card-title'>{bathroom.name}</h5>
+                <p className='card-text'>Description: {bathroom.description}</p>
+                <small className='text-muted'>{bathroom.location}</small>
+              </div>
+            </div>
+          </div>
         </div>
       </Link>
+
     ))
     return (
-      <div style={{ paddingTop: '2%', marginLeft: '2%' }}>
-        <h4>All Bathrooms:</h4>
+      <div>
         {bathroomsJsx}
       </div>
     )

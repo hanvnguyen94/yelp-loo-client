@@ -22,16 +22,16 @@ class BathroomUpdate extends Component {
       .then(res => this.setState({ bathroom: res.data.bathroom }))
       .then(() => {
         msgAlert({
-          heading: 'Showing Bathroom Successfully',
+          heading: 'Showing Loo Successfully',
           variant: 'success',
-          message: 'You can now edit the bathroom.'
+          message: 'You can now edit the loo.'
         })
       })
       .catch(err => {
         msgAlert({
-          heading: 'Showing Bathroom Failed',
+          heading: 'Showing Loo Failed',
           variant: 'danger',
-          message: 'Bathroom is not displayed due to error: ' + err.message
+          message: 'Loo is not displayed due to error: ' + err.message
         })
       })
   }
@@ -46,16 +46,16 @@ class BathroomUpdate extends Component {
       .then(res => this.setState({ updated: true }))
       .then(() => {
         msgAlert({
-          heading: 'Updated Bathroom Successfully',
+          heading: 'Updated Loo Successfully',
           variant: 'success',
-          message: 'Bathroom has been updated.'
+          message: 'Loo has been updated.'
         })
       })
       .catch(err => {
         msgAlert({
-          heading: 'Updating Bathroom Failed',
+          heading: 'Updating Loo Failed',
           variant: 'danger',
-          message: 'Bathroom was not updated due to error: ' + err.message
+          message: 'Loo was not updated due to error: ' + err.message
         })
       })
   }
@@ -86,7 +86,7 @@ class BathroomUpdate extends Component {
 
     return (
       <div>
-        <h3>Edit Bathroom</h3>
+        <h1 className='text-center'>Edit This Loo</h1>
         <BathroomForm
           bathroom={bathroom}
           handleChange={this.handleChange}
