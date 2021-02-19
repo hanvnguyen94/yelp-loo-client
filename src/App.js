@@ -18,7 +18,7 @@ import BathroomUpdate from './components/BathroomUpdate/BathroomUpdate'
 // import { MapContainer } from './components/GoogleMap/GoogleMap'
 
 // Google Map components
-import GoogleMap from './components/GoogleMap/GoogleMap'
+import { MapContainer } from './components/GoogleMap/GoogleMap'
 
 // import Footer from './components/Footer/Footer'
 class App extends Component {
@@ -82,7 +82,7 @@ class App extends Component {
 
             <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
               <Fragment>
-                <GoogleMap />
+                <MapContainer />
                 <BathroomIndex msgAlert={this.msgAlert} user={user} />
               </Fragment>
 

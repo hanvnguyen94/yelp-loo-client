@@ -105,4 +105,4 @@ export class SecondMapContainer extends Component {
   }
 }
 
-export default withRouter(MapContainer)
+export default withRouter(GoogleMap)

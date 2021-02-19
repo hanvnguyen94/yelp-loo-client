@@ -42,7 +42,7 @@ class BathroomIndex extends Component {
     }
 
     const bathroomsJsx = bathrooms.map(bathroom => (
-      <Link to={`/bathrooms/${bathroom.id}`} key={bathroom.id}>
+      <Link to={`/bathrooms/${bathroom.id}`} key={bathroom.id} name={bathroom.name}>
         <div className='card mb-3'>
           <div className='row'>
             <div className='col-md-4'>
