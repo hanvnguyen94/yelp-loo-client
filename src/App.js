@@ -15,11 +15,12 @@ import BathroomIndex from './components/BathroomIndex/BathroomIndex'
 import BathroomCreate from './components/BathroomCreate/BathroomCreate'
 import BathroomShow from './components/BathroomShow/BathroomShow'
 import BathroomUpdate from './components/BathroomUpdate/BathroomUpdate'
-import { MapContainer } from './components/GoogleMap/GoogleMap'
+// import { MapContainer } from './components/GoogleMap/GoogleMap'
+
+// Google Map components
+import GoogleMap from './components/GoogleMap/GoogleMap'
+
 // import Footer from './components/Footer/Footer'
-
-// import Button from 'react-bootstrap/Button'
-
 class App extends Component {
   constructor (props) {
     super(props)
@@ -81,7 +82,7 @@ class App extends Component {
 
             <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
               <Fragment>
-                <MapContainer />
+                <GoogleMap />
                 <BathroomIndex msgAlert={this.msgAlert} user={user} />
               </Fragment>
 
@@ -97,7 +98,7 @@ class App extends Component {
               <BathroomShow msgAlert={this.msgAlert} user={user} />
             )} />
 
-            {/* Update a single movie */}
+            {/* Update a single bathroom */}
             <AuthenticatedRoute user={user} path='/bathrooms/:id/edit/' render={() => (
               <BathroomUpdate msgAlert={this.msgAlert} user={user} />
             )} />

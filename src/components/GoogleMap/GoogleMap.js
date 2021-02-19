@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Component } from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
-// import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Geocode from 'react-geocode'
 
 const GoogleMapKey = 'AIzaSyAXQgIkuRMVnmvJsAGvpjmLio18eXm1ERc'
@@ -30,13 +30,6 @@ export const MapContainer = () => {
     navigator.geolocation.getCurrentPosition(success)
   })
 
-  const mapStyles = {
-    textAlign: 'center',
-    height: '60vh',
-    width: '100%',
-    marginBottom: '2%'
-  }
-
   return (
     <LoadScript
       googleMapsApiKey={GoogleMapKey}>
@@ -63,44 +56,53 @@ const mapStyles = {
   marginBottom: '2%'
 }
 
-export default class SecondMapContainer extends Component {
+export class SecondMapContainer extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      location: null
+      lat: null,
+      lng: null
     }
   }
-  componendDidMount () {
-    let lat
-    let lng
+  componentDidMount () {
+    // console.log('is bathroom here?', this.props.bathroom)
+    const { location } = this.props.bathroom
+    // console.log('is location here?', location)
     Geocode.fromAddress(location).then(
       (response) => {
-        lat = response.results[0].geometry.location.lat
-        lng = response.results[0].geometry.location.lng
-        console.log(lat, lng)
-        this.setState({ location: location })
+        const lat = response.results[0].geometry.location.lat
+        const lng = response.results[0].geometry.location.lng
+        this.setState(
+          { lat: lat, lng: lng }
+        )
+        // console.log('lat state here right?', this.state.lat)
+        // console.log('long state here right?', this.state.lng)
       },
       (error) => {
         console.error(error)
       }
     )
   }
-  // const defaultCenter = {
-  //   lat: lat, lng: lng
-  // }
+
   render () {
+    const { lat, lng } = this.state
     return (
       <LoadScript
         googleMapsApiKey={GoogleMapKey}>
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}
-          center={{ location }}
-        />
+          center={{ lat, lng }}
+        >
+          <Marker
+            key={location}
+            position={{ lat, lng }}
+          />
+        /</GoogleMap>
       </LoadScript>
     )
   }
 }
 
-// export default GoogleMap
+export default withRouter(MapContainer)
