@@ -3,9 +3,9 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 import { withRouter } from 'react-router-dom'
 import Geocode from 'react-geocode'
 
-const GoogleKey = `${process.env.SECRET}`
+const _key = 'AIzaSyAXQgIkuRMVnmvJsAGvpjmLio18eXm1ERc'
 
-Geocode.setApiKey(GoogleKey)
+Geocode.setApiKey(_key)
 
 Geocode.setLocationType('ROOFTOP')
 
@@ -32,7 +32,7 @@ export const MapContainer = () => {
 
   return (
     <LoadScript
-      googleMapsApiKey={GoogleKey}>
+      googleMapsApiKey={_key}>
       <GoogleMap
         mapContainerStyle={mapStyles}
         zoom={13}
@@ -89,7 +89,7 @@ export class SecondMapContainer extends Component {
     const { lat, lng } = this.state
     return (
       <LoadScript
-        googleMapsApiKey={GoogleKey}>
+        googleMapsApiKey={_key}>
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}
