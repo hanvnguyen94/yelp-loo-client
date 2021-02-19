@@ -10,6 +10,17 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 
+// Bathroom components
+import BathroomIndex from './components/BathroomIndex/BathroomIndex'
+import BathroomCreate from './components/BathroomCreate/BathroomCreate'
+import BathroomShow from './components/BathroomShow/BathroomShow'
+import BathroomUpdate from './components/BathroomUpdate/BathroomUpdate'
+// import { MapContainer } from './components/GoogleMap/GoogleMap'
+
+// Google Map components
+import { MapContainer } from './components/GoogleMap/GoogleMap'
+
+// import Footer from './components/Footer/Footer'
 class App extends Component {
   constructor (props) {
     super(props)
@@ -52,20 +63,50 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
-        <main className="container">
-          <Route path='/sign-up' render={() => (
-            <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
-          )} />
-          <Route path='/sign-in' render={() => (
-            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
-          )} />
-          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
-            <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
-            <ChangePassword msgAlert={this.msgAlert} user={user} />
-          )} />
-        </main>
+        <section className="container d-flex flex-column vh-100">
+          <main className="container mt-5">
+            <Route path='/sign-up' render={() => (
+              <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+            )} />
+            <Route path='/sign-in' render={() => (
+              <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+            )} />
+            <AuthenticatedRoute user={user} path='/sign-out' render={() => (
+              <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+            )} />
+            <AuthenticatedRoute user={user} path='/change-password' render={() => (
+              <ChangePassword msgAlert={this.msgAlert} user={user} />
+            )} />
+
+            {/* Show all bathrooms */}
+
+            <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
+              <Fragment>
+                <MapContainer />
+                <BathroomIndex msgAlert={this.msgAlert} user={user} />
+              </Fragment>
+
+            )} />
+
+            {/* Create a bathroom */}
+            <AuthenticatedRoute user={user} path='/create-bathroom' render={() => (
+              <BathroomCreate msgAlert={this.msgAlert} user={user} />
+            )} />
+
+            {/* Get a single bathroom | show */}
+            <AuthenticatedRoute user={user} exact path='/bathrooms/:id' render={() => (
+              <BathroomShow msgAlert={this.msgAlert} user={user} />
+            )} />
+
+            {/* Update a single bathroom */}
+            <AuthenticatedRoute user={user} path='/bathrooms/:id/edit/' render={() => (
+              <BathroomUpdate msgAlert={this.msgAlert} user={user} />
+            )} />
+          </main>
+        </section>
+        {/* <footer>
+          <Footer />
+        </footer> */}
       </Fragment>
     )
   }
