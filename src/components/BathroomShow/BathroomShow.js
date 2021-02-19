@@ -7,7 +7,7 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem'
 // import withRouter so we have access to the match route prop
 import { withRouter, Redirect, Link } from 'react-router-dom'
 import { bathroomShow, bathroomDelete } from '../../api/bathroom'
-// import { SecondMapContainer } from '../GoogleMap/GoogleMap'
+import SecondMapContainer from '../GoogleMap/SecondMap'
 
 class BathroomShow extends Component {
   constructor (props) {
@@ -75,7 +75,7 @@ class BathroomShow extends Component {
     return (
       <div className='row'>
         <div className='col-6 offset-3 mb-3'>
-          {/* <SecondMapContainer style={{ selfAlign: 'center' }} bathroom={bathroom}/> */}
+          <SecondMapContainer style={{ selfAlign: 'center' }} bathroom={bathroom}/>
           <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={bathroom.photoUrl}/>
             <Card.Body>

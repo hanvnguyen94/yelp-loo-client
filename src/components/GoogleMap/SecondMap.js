@@ -1,6 +1,6 @@
-import React, { useState, useEffect, Component } from 'react'
+import React, { Component } from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
 import Geocode from 'react-geocode'
 
 const _key = 'AIzaSyAXQgIkuRMVnmvJsAGvpjmLio18eXm1ERc'
@@ -9,54 +9,12 @@ Geocode.setApiKey(_key)
 
 Geocode.setLocationType('ROOFTOP')
 
-export const MapContainer = () => {
-  const [ currentPosition, setCurrentPosition ] = useState({})
-
-  const success = position => {
-    const currentPosition = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
-    }
-    setCurrentPosition(currentPosition)
-  }
-
-  const onMarkerDragEnd = (e) => {
-    const lat = e.latLng.lat()
-    const lng = e.latLng.lng()
-    setCurrentPosition({ lat, lng })
-  }
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(success)
-  })
-
-  return (
-    <LoadScript
-      googleMapsApiKey={_key}>
-      <GoogleMap
-        mapContainerStyle={mapStyles}
-        zoom={13}
-        center={currentPosition}>
-        {
-          currentPosition.lat
-            ? <Marker
-              position={currentPosition}
-              onDragEnd={(e) => onMarkerDragEnd(e)}
-              draggable={true} />
-            : null
-        }
-      </GoogleMap>
-    </LoadScript>
-  )
-}
-
 const mapStyles = {
   height: '60vh',
   width: '100%',
   marginBottom: '2%'
 }
-
-export class SecondMapContainer extends Component {
+class SecondMapContainer extends Component {
   constructor (props) {
     super(props)
 
@@ -105,4 +63,4 @@ export class SecondMapContainer extends Component {
   }
 }
 
-export default withRouter(GoogleMap)
+export default SecondMapContainer
