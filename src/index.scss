@@ -13,12 +13,11 @@ body {
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 }
 
-h1, .lead{
+h1, h2{
   text-shadow: 0 0.5rem 0.1rem rgba(0, 0, 0, 0.5);
-
 }
 
-.homepage, .signIn, .signUp, .createLoo, .index-loo, .change-pw {
+.homepage, .signIn, .signUp, .createLoo, .index-loo, .change-pw, .show-index {
   height: 78vh;
 }
 

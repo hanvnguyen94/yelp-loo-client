@@ -58,7 +58,6 @@ class BathroomIndex extends Component {
           </div>
         </div>
       </Link>
-
     ))
     return (
       <div>

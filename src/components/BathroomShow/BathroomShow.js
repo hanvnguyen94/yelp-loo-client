@@ -74,7 +74,7 @@ class BathroomShow extends Component {
     }
     return (
       <div className='row'>
-        <div className='col-6 offset-3 mb-3'>
+        <div className='col-6 mb-3' style={{ marginLeft: '35%' }}>
           {/* <SecondMapContainer style={{ selfAlign: 'center' }} bathroom={bathroom}/> */}
           <Card style={{ width: '18rem', color: 'black' }}>
             <Card.Img variant="top" src={bathroom.photoUrl}/>
