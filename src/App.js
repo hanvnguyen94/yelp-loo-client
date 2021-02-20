@@ -83,10 +83,10 @@ class App extends Component {
               <Homepage user={user} />
             )} />
             <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
-              <Fragment>
+              <div style={{ minHeight: '78vh' }}>
                 {/* <MapContainer /> */}
                 <BathroomIndex msgAlert={this.msgAlert} user={user} />
-              </Fragment>
+              </div>
             )} />
 
             {/* Create a bathroom */}

@@ -73,7 +73,7 @@ class BathroomShow extends Component {
       return <Redirect to="/bathrooms/" />
     }
     return (
-      <div className='row'>
+      <div className='row display-section'>
         <div className='col-6 mb-3' style={{ marginLeft: '35%' }}>
           {/* <SecondMapContainer style={{ selfAlign: 'center' }} bathroom={bathroom}/> */}
           <Card style={{ width: '18rem', color: 'black' }}>

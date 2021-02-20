@@ -2,14 +2,14 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 
 const BathroomForm = ({ bathroom, handleSubmit, handleChange }) => (
-  <div className='row createLoo'>
+  <div className='row display-section'>
     <div className='col-6 offset-3'>
       <form onSubmit={handleSubmit}>
         <div className='mb-3'>
-          <label className='form-label'>Name</label>
+          <label className='form-label'>Nick Name</label>
           <input className='form-control'
             required
-            placeholder="Name"
+            placeholder="Give it a nickname"
             // This name should line up with the state we want to change
             name='name'
             value={bathroom.name}
@@ -31,7 +31,7 @@ const BathroomForm = ({ bathroom, handleSubmit, handleChange }) => (
           <label className='form-label'>Location</label>
           <input className='form-control'
             required
-            placeholder="Location"
+            placeholder="Where is it located?"
             // This name should line up with the state we want to change
             name='location'
             value={bathroom.location}
@@ -39,10 +39,10 @@ const BathroomForm = ({ bathroom, handleSubmit, handleChange }) => (
           />
         </div>
         <div className='mb-3'>
-          <label className='form-label'>Description</label>
+          <label className='form-label'>Comment</label>
           <textarea className='form-control'
             required
-            placeholder="Description"
+            placeholder="What do you think?"
             // This name should line up with the state we want to change
             name='description'
             value={bathroom.description}
