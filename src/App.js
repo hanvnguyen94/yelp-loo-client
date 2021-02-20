@@ -18,8 +18,9 @@ import BathroomUpdate from './components/BathroomUpdate/BathroomUpdate'
 
 // Google Map components
 // import { MapContainer } from './components/GoogleMap/FirstMap'
+import Homepage from './components/Homepage/Homepage'
 
-// import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer'
 class App extends Component {
   constructor (props) {
     super(props)
@@ -62,7 +63,7 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
-        <section className="container d-flex flex-column vh-100">
+        <section className="d-flex flex-column mb-auto">
           <main className="container mt-5">
             <Route path='/sign-up' render={() => (
               <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -78,13 +79,14 @@ class App extends Component {
             )} />
 
             {/* Show all bathrooms */}
-
+            <Route exact path='/' user={user} render={() => (
+              <Homepage user={user} />
+            )} />
             <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
-              <Fragment>
+              <Fragment style={{ height: '78vh' }}>
                 {/* <MapContainer /> */}
                 <BathroomIndex msgAlert={this.msgAlert} user={user} />
               </Fragment>
-
             )} />
 
             {/* Create a bathroom */}
@@ -103,9 +105,7 @@ class App extends Component {
             )} />
           </main>
         </section>
-        {/* <footer>
-          <Footer />
-        </footer> */}
+        <Footer />
       </Fragment>
     )
   }

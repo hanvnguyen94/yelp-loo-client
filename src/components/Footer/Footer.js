@@ -2,10 +2,10 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
 const Footer = () => {
-  return <footer className="footer bg-light py-3 mt-auto">
+  return <footer className="footer">
     <Container>
       <Row>
-        <Col className=' footer text-center py-3 text-muted'>
+        <Col className='footer text-center py-5 text-muted'>
           Copyright &copy; YelpLoo 2021
         </Col>
       </Row>

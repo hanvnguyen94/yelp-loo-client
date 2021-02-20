@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 
 const BathroomForm = ({ bathroom, handleSubmit, handleChange }) => (
-  <div className='row'>
+  <div className='row createLoo'>
     <div className='col-6 offset-3'>
       <form onSubmit={handleSubmit}>
         <div className='mb-3'>
