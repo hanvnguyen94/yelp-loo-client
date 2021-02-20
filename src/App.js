@@ -83,7 +83,7 @@ class App extends Component {
               <Homepage user={user} />
             )} />
             <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
-              <Fragment style={{ height: '78vh' }}>
+              <Fragment>
                 {/* <MapContainer /> */}
                 <BathroomIndex msgAlert={this.msgAlert} user={user} />
               </Fragment>
