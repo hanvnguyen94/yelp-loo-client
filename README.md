@@ -1,6 +1,6 @@
 # Yelp-Loo Web App
 
-This full-stack application can be viewed as a clone of yelp.com . It has two resources which are user and loos(bathrooms). The user will be able to create an account and organize their "public bathroom" online, which stores all related information like photos and addresses.
+This full-stack application can be viewed as a clone of Yelp.com . It has two resources which are user and loos(bathrooms). The user will be able to create an account and organize their "public bathroom" online, which stores all related information like photos and addresses.
 
 
 ## Important Links
@@ -43,7 +43,6 @@ This project was created with logic steps as below:
 - SASS
 - Bootstrap 4
 - Javascript
-- Django
 
 ## Unsolved Problems
 - Implement Google Maps API to work on the site (not just locally)
@@ -53,7 +52,6 @@ This project was created with logic steps as below:
 ## Wireframes:
 ![Landing Page](https://user-images.githubusercontent.com/73920080/108145631-c4dc2100-7099-11eb-8a33-727c7ab3200b.png)
 ![view public bathrooms](https://user-images.githubusercontent.com/73920080/108145637-c60d4e00-7099-11eb-9919-8ce54387f8c9.png)
-![ERD](https://user-images.githubusercontent.com/73920080/108147006-2e5d2f00-709c-11eb-80b6-766add2957d9.png)
 
 ## Screenshot
 <img width="1440" alt="Screen Shot 2021-02-19 at 22 22 03 PM png  1" src="https://user-images.githubusercontent.com/73920080/108582449-6dd88500-7301-11eb-9678-4b0dfda688be.png">
