@@ -51,7 +51,7 @@ class BathroomIndex extends Component {
             <div className='col-md-8'>
               <div className='card-body'>
                 <h5 className='card-title'>{bathroom.name}</h5>
-                <p className='card-text'>Description: {bathroom.description}</p>
+                <p className='card-text'>Comment: {bathroom.description}</p>
                 <small className='text-muted'>{bathroom.location}</small>
               </div>
             </div>

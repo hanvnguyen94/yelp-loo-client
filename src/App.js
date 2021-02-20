@@ -85,6 +85,7 @@ class App extends Component {
             <AuthenticatedRoute user={user} exact path='/bathrooms' render={() => (
               <div style={{ minHeight: '78vh' }}>
                 {/* <MapContainer /> */}
+                <h2 className='text-center mb-3'>Here are your loos</h2>
                 <BathroomIndex msgAlert={this.msgAlert} user={user} />
               </div>
             )} />

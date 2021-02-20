@@ -68,7 +68,7 @@ class BathroomCreate extends Component {
     }
     return (
       <div>
-        <h1 className='text-center'>Add New Loo</h1>
+        <h2 className='text-center'>Add New Loo</h2>
         <BathroomForm
           bathroom={bathroom}
           handleChange={this.handleChange}
