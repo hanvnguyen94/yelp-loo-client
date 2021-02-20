@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import Spinner from 'react-bootstrap/Spinner'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
@@ -7,7 +7,6 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem'
 // import withRouter so we have access to the match route prop
 import { withRouter, Redirect, Link } from 'react-router-dom'
 import { bathroomShow, bathroomDelete } from '../../api/bathroom'
-// import SecondMapContainer from '../GoogleMap/SecondMap'
 
 class BathroomShow extends Component {
   constructor (props) {
@@ -73,29 +72,31 @@ class BathroomShow extends Component {
       return <Redirect to="/bathrooms/" />
     }
     return (
-      <div className='row display-section'>
-        <div className='col-6 mb-3' style={{ marginLeft: '35%' }}>
-          {/* <SecondMapContainer style={{ selfAlign: 'center' }} bathroom={bathroom}/> */}
-          <Card style={{ width: '18rem', color: 'black' }}>
-            <Card.Img variant="top" src={bathroom.photoUrl}/>
-            <Card.Body>
-              <Card.Title>{bathroom.name}</Card.Title>
-              <Card.Text>
-                {bathroom.description}
-              </Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroupItem className="text-muted">{bathroom.location}</ListGroupItem>
-            </ListGroup>
-            <Card.Body>
-              <Button className='mr-2' variant="outline-info">
-                <Link to={`/bathrooms/${bathroom.id}/edit/`}>Update</Link>
-              </Button>
-              <Button variant="danger" onClick={this.handleDelete}>Delete</Button>
-            </Card.Body>
-          </Card>
+      <Fragment>
+        <h2 className='text-center'>Here Is A Single Loo</h2>
+        <div className='row display-section'>
+          <div className='col-6 mb-3' style={{ marginLeft: '35%' }}>
+            <Card style={{ width: '18rem', color: 'black' }}>
+              <Card.Img variant="top" src={bathroom.photoUrl}/>
+              <Card.Body>
+                <Card.Title>{bathroom.name}</Card.Title>
+                <Card.Text>
+                  {bathroom.description}
+                </Card.Text>
+              </Card.Body>
+              <ListGroup className="list-group-flush">
+                <ListGroupItem className="text-muted">{bathroom.location}</ListGroupItem>
+              </ListGroup>
+              <Card.Body>
+                <Button className='mr-2' variant="outline-info">
+                  <Link to={`/bathrooms/${bathroom.id}/edit/`}>Update</Link>
+                </Button>
+                <Button variant="danger" onClick={this.handleDelete}>Delete</Button>
+              </Card.Body>
+            </Card>
+          </div>
         </div>
-      </div>
+      </Fragment>
     )
   }
 }
