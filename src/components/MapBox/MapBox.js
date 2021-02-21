@@ -38,12 +38,12 @@ const MapBoxContainer = () => {
   )
 
   return (
-    <div style={{ height: '100vh', marginBottom: '3%' }}>
+    <div style={{ marginBottom: '3%' }}>
       <MapGL
         ref={mapRef}
         {...viewport}
         width="100%"
-        height="100%"
+        height="60vh"
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={_MAPBOX_TOKEN}
       >
