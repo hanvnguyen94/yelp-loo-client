@@ -29,15 +29,15 @@ class SignIn extends Component {
     signIn(this.state)
       .then(res => setUser(res.data.user))
       .then(() => msgAlert({
-        heading: 'Sign In Success',
+        heading: 'Log In Success',
         message: messages.signInSuccess,
-        variant: 'success'
+        variant: 'secondary'
       }))
       .then(() => history.push('/'))
       .catch(error => {
         this.setState({ email: '', password: '' })
         msgAlert({
-          heading: 'Sign In Failed with error: ' + error.message,
+          heading: 'Log In Failed with error: ' + error.message,
           message: messages.signInFailure,
           variant: 'danger'
         })

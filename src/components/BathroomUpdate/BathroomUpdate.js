@@ -23,7 +23,7 @@ class BathroomUpdate extends Component {
       .then(() => {
         msgAlert({
           heading: 'Showing Loo Successfully',
-          variant: 'success',
+          variant: 'secondary',
           message: 'You can now edit the loo.'
         })
       })
@@ -47,7 +47,7 @@ class BathroomUpdate extends Component {
       .then(() => {
         msgAlert({
           heading: 'Updated Loo Successfully',
-          variant: 'success',
+          variant: 'secondary',
           message: 'Loo has been updated.'
         })
       })

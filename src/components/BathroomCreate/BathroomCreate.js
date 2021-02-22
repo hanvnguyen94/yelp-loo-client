@@ -12,7 +12,8 @@ class BathroomCreate extends Component {
         name: '',
         photoUrl: '',
         location: '',
-        description: ''
+        description: '',
+        created_at: ''
       },
       // createdId will be null, until we successfully create a bathroom
       createdId: null
@@ -26,7 +27,7 @@ class BathroomCreate extends Component {
     bathroomCreate(bathroom, user)
       // set the createdId to the id of the bathroom we just created
       .then(res => {
-        this.setState({ createdId: res.data.bathroom.id })
+        this.setState({ created_at: res.data.bathroom.created_at, createdId: res.data.bathroom.id })
         // pass the response to the next .then so we can show the title
         return res
       })

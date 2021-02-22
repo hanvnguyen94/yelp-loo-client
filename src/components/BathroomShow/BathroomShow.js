@@ -28,7 +28,7 @@ class BathroomShow extends Component {
       .then(() => msgAlert({
         heading: 'Showing Loo Successfully',
         message: 'The Loo is now displayed.',
-        variant: 'success'
+        variant: 'secondary'
       }))
       .catch(error => {
         msgAlert({
@@ -47,7 +47,7 @@ class BathroomShow extends Component {
       .then(() => msgAlert({
         heading: 'Deleted Loo Successfully!',
         message: 'Loo deleted!',
-        variant: 'success'
+        variant: 'secondary'
       }))
       .catch(error => {
         msgAlert({
@@ -75,9 +75,9 @@ class BathroomShow extends Component {
     }
     return (
       <Fragment>
-        <h2 className='text-center'>Here Is A Single Loo</h2>
         <div className='row display-section'>
-          <div className='col-6 mb-3' style={{ marginLeft: '35%' }}>
+          <div className='col-6 offset-3 mb-3'>
+            <h2 className='text-center'>Here Is A Single Loo</h2>
             {/* <SecondMapContainer style={{ selfAlign: 'center' }} bathroom={bathroom}/> */}
             <Card style={{ width: '18rem', color: 'black' }}>
               <Card.Img variant="top" src={bathroom.photoUrl}/>
@@ -89,6 +89,7 @@ class BathroomShow extends Component {
               </Card.Body>
               <ListGroup className="list-group-flush">
                 <ListGroupItem className="text-muted">{bathroom.location}</ListGroupItem>
+                <ListGroupItem className="text-muted">Created on <strong>{bathroom.created_at}</strong></ListGroupItem>
               </ListGroup>
               <Card.Body>
                 <Button className='mr-2' variant="outline-info">

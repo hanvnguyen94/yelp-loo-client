@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 // import { withRouter } from 'react-router-dom'
-// import Geocode from 'react-geocode'
+import Geocode from 'react-geocode'
 
 const _key = 'AIzaSyAXQgIkuRMVnmvJsAGvpjmLio18eXm1ERc'
 
-// Geocode.setApiKey(_key)
+Geocode.setApiKey(_key)
 
-// Geocode.setLocationType('ROOFTOP')
+Geocode.setLocationType('ROOFTOP')
 
 const mapStyles = {
   height: '60vh',

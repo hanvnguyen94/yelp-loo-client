@@ -31,15 +31,15 @@ class SignUp extends Component {
       .then(() => signIn(this.state))
       .then(res => setUser(res.data.user))
       .then(() => msgAlert({
-        heading: 'Sign Up Success',
+        heading: 'Register Success',
         message: messages.signUpSuccess,
-        variant: 'success'
+        variant: 'secondary'
       }))
       .then(() => history.push('/'))
       .catch(error => {
         this.setState({ email: '', password: '', passwordConfirmation: '' })
         msgAlert({
-          heading: 'Sign Up Failed with error: ' + error.message,
+          heading: 'Register Failed with error: ' + error.message,
           message: messages.signUpFailure,
           variant: 'danger'
         })
@@ -61,7 +61,7 @@ class SignUp extends Component {
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="Enter email (required .com)"
                 onChange={this.handleChange}
               />
             </Form.Group>
@@ -72,7 +72,7 @@ class SignUp extends Component {
                 name="password"
                 value={password}
                 type="password"
-                placeholder="Password"
+                placeholder="Password must have at least 5 characters"
                 onChange={this.handleChange}
               />
             </Form.Group>

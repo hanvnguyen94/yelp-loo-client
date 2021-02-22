@@ -21,7 +21,7 @@ class BathroomIndex extends Component {
       .then(() => msgAlert({
         heading: 'Loaded Loos Successfully',
         message: 'All Loos retrieved. Click on one to go to its page.',
-        variant: 'success'
+        variant: 'secondary'
       }))
       .catch(error => {
         msgAlert({

@@ -30,7 +30,7 @@ class ChangePassword extends Component {
       .then(() => msgAlert({
         heading: 'Change Password Success',
         message: messages.changePasswordSuccess,
-        variant: 'success'
+        variant: 'secondary'
       }))
       .then(() => history.push('/'))
       .catch(error => {
