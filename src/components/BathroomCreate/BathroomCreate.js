@@ -34,7 +34,7 @@ class BathroomCreate extends Component {
       .then(res => msgAlert({
         heading: 'Created Loo Successfully',
         message: `Loo has been created successfully. Now viewing ${res.data.bathroom.name}.`,
-        variant: 'success'
+        variant: 'secondary'
       }))
       .catch(error => {
         msgAlert({
