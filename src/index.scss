@@ -5,8 +5,10 @@ $danger: #e63946;
 $background: #a8dadc;
 
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 body {
+  font-family: 'Poppins', sans-serif;
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./imgs/dark-public.png');
   color: rgb(255, 255, 255);
