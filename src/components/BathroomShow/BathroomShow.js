@@ -8,7 +8,7 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import { withRouter, Redirect, Link } from 'react-router-dom'
 import { bathroomShow, bathroomDelete } from '../../api/bathroom'
 
-// import { SecondMapContainer } from '../MapBox/GoogleMap'
+// import SecondMapContainer from '../MapBox/GoogleMap'
 
 class BathroomShow extends Component {
   constructor (props) {

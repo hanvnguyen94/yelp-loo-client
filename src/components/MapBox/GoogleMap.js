@@ -12,8 +12,8 @@ const mapStyles = {
   marginBottom: '2%'
 }
 
-export class SecondMapContainer extends Component {
-  constructor (props) {
+class SecondMapContainer extends Component {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -22,7 +22,6 @@ export class SecondMapContainer extends Component {
     }
   }
   componentDidMount () {
-    // console.log('is bathroom here?', this.props.bathroom)
     const { location } = this.props.bathroom
     // console.log('is location here?', location)
     Geocode.fromAddress(location).then(
@@ -32,14 +31,13 @@ export class SecondMapContainer extends Component {
         this.setState(
           { lat: lat, lng: lng }
         )
-        console.log('lat state here right?', this.state.lat)
-        console.log('long state here right?', this.state.lng)
       },
       (error) => {
         console.error(error)
       }
     )
   }
+
   render () {
     const { lat, lng } = this.state
     return (
